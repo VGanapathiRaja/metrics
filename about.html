@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .gridbox1{
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid red;
+            background-color: aliceblue;
+            display: grid;
+            /* grid-template-columns: 300px 300px 300px 300px;
+            grid-template-rows: 200px 300px 300px; */
+
+            /* grid-template-columns: 1fr 2fr 3fr 4fr 5fr 6fr ;
+            grid-template-rows: 1fr 3fr 4fr; */
+
+            /* grid-template-columns: repeat(3,200px); */
+            grid-template-columns: repeat(auto-fit,minmax(200px,3fr));
+        }
+        .griditem{
+            padding: 20px 25px;
+            margin: 10px;
+            background-color: aquamarine;
+            text-align: center;
+            color: blueviolet;
+        }
+
+
+         .gridbox2{
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid red;
+            background-color: aliceblue;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            /* grid-template-rows: auto auto auto; */
+            gap: 10px;
+            grid-template-areas:
+    "header header header"
+    "sidemenus maincontent sidemenus"
+    "footer footer footer";
+            /* grid-area: 
+            "header header",
+            "sidemenus",
+            "maincontent",
+            "sidemenus",
+            "footer footer" ; */
+         }
+         .header{
+            background-color: aquamarine;
+            text-align: center;
+            padding: 10px 20px;
+            /* margin: 10px; */
+            /* grid-column: 1/4; */
+            grid-area:header;
+         }
+         .sidemenus{
+            background-color: aquamarine;
+            text-align: center;
+            padding: 10px 20px;
+            /* margin: 10px; */
+            grid-area: sidemenus;
+         }
+         .maincontent{
+            background-color: aquamarine;
+            text-align: center;
+            padding: 10px 20px;
+            /* margin: 10px; */
+            grid-area: maincontent;
+         }
+         .footer{
+            background-color: rgb(19, 151, 107);
+            text-align: center;
+            padding: 10px 20px;
+            /* margin: 10px; */
+            /* grid-column: 1/4; */
+            grid-area: footer;
+         }
+         .header { min-height: 60px; }
+.sidemenus { min-height: 200px; }
+.maincontent { min-height: 200px; }
+.footer { min-height: 60px; }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="logo">
+            <a href="#">Metxxxxxxx</a>
+            <div class="menuicon">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="menus">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="supermenu"><a href="#">service</a>
+                    <ul class="childmenus">
+                        <li><a href="service.html">Service1</a></li>
+                        <li><a href="#">Service2</a></li>
+                        <li><a href="#">Service3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <h1>Grid Property</h1>
+    <div class="gridbox1">
+        <div class="griditem">1</div>
+        <div class="griditem">2</div>
+        <div class="griditem">3</div>
+        <div class="griditem">4</div>
+        <div class="griditem">5</div>
+        <div class="griditem">6</div>
+        <div class="griditem">7</div>
+        <div class="griditem">8</div>
+        <div class="griditem">9</div>
+        <div class="griditem">10</div>
+        <div class="griditem">11</div>
+        <div class="griditem">12</div>
+    </div>
+
+    <div class="gridbox2">
+        <div class="header">Menus</div>
+        <div class="sidemenus">sidemenus</div>
+        <div class="maincontent">Maincontent</div>
+        <div class="sidemenus">sidemenus</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
